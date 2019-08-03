@@ -1,7 +1,9 @@
 <h1 align="center"> baidu-map </h1>
 
-<p align="center"> 百度地图 SDK..</p>
+<p align="center"> 百度地图 SDK.</p>
 
+[![Build Status](https://travis-ci.org/her-cat/baidu-map.svg?branch=master)](https://travis-ci.org/her-cat/baidu-map) 
+[![StyleCI build status](https://github.styleci.io/repos/200389077/shield)](https://github.styleci.io/repos/200389077)
 
 ## Installing
 
