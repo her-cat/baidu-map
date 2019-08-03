@@ -8,10 +8,18 @@
             "email": "i@her-cat.com"
         }
     ],
-    "require": {},
+    "require": {
+        "phpunit/phpunit": "~5",
+        "mockery/mockery": "^1.2"
+    },
     "autoload": {
         "psr-4": {
             "HerCat\\BaiduMap\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HerCat\\BaiduMap\\Tests\\": "tests/"
         }
     }
 }
