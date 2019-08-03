@@ -1,0 +1,17 @@
+{
+    "name": "her-cat/baidu-map",
+    "description": "百度地图 SDK.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "her-cat",
+            "email": "i@her-cat.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "HerCat\\BaiduMap\\": "src"
+        }
+    }
+}
