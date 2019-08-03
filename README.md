@@ -1,4 +1,4 @@
-<h1 align="center"> /】baidu-map </h1>
+<h1 align="center"> baidu-map </h1>
 
 <p align="center"> 百度地图 SDK..</p>
 
