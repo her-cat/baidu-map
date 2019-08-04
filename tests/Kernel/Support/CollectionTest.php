@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\Tests\Kernel\Support;
 
 use HerCat\BaiduMap\Kernel\Support\Collection;
@@ -63,7 +72,7 @@ class CollectionTest extends TestCase
                 [
                     'key' => 'value2',
                 ],
-            ]
+            ],
         ]);
 
         $this->assertTrue($collection->has('name'));
@@ -120,7 +129,6 @@ class CollectionTest extends TestCase
 
         unset($collection->foo);
         $this->assertSame(2, $collection->count());
-
     }
 
     public function testSerialize()
@@ -146,7 +154,7 @@ class CollectionTest extends TestCase
                 [
                     'key' => 'value2',
                 ],
-            ]
+            ],
         ];
 
         $collection = new Collection($array);

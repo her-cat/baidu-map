@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\Kernel\Support;
 
 /**
@@ -82,7 +91,6 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
 
     /**
      * @param $key
-     *
      * @param null $default
      *
      * @return array|mixed|null
@@ -244,12 +252,15 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * Count elements of an object
-     * @link https://php.net/manual/en/countable.count.php
+     * Count elements of an object.
+     *
+     * @see https://php.net/manual/en/countable.count.php
+     *
      * @return int The custom count as an integer.
-     * </p>
-     * <p>
-     * The return value is cast to an integer.
+     *             </p>
+     *             <p>
+     *             The return value is cast to an integer.
+     *
      * @since 5.1.0
      */
     public function count()
@@ -258,15 +269,19 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * Whether a offset exists
-     * @link https://php.net/manual/en/arrayaccess.offsetexists.php
+     * Whether a offset exists.
+     *
+     * @see https://php.net/manual/en/arrayaccess.offsetexists.php
+     *
      * @param mixed $offset <p>
-     * An offset to check for.
-     * </p>
-     * @return boolean true on success or false on failure.
-     * </p>
-     * <p>
-     * The return value will be casted to boolean if non-boolean was returned.
+     *                      An offset to check for.
+     *                      </p>
+     *
+     * @return bool true on success or false on failure.
+     *              </p>
+     *              <p>
+     *              The return value will be casted to boolean if non-boolean was returned.
+     *
      * @since 5.0.0
      */
     public function offsetExists($offset)
@@ -275,12 +290,16 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * Offset to retrieve
-     * @link https://php.net/manual/en/arrayaccess.offsetget.php
+     * Offset to retrieve.
+     *
+     * @see https://php.net/manual/en/arrayaccess.offsetget.php
+     *
      * @param mixed $offset <p>
-     * The offset to retrieve.
-     * </p>
-     * @return mixed Can return all value types.
+     *                      The offset to retrieve.
+     *                      </p>
+     *
+     * @return mixed can return all value types
+     *
      * @since 5.0.0
      */
     public function offsetGet($offset)
@@ -289,15 +308,17 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * Offset to set
-     * @link https://php.net/manual/en/arrayaccess.offsetset.php
+     * Offset to set.
+     *
+     * @see https://php.net/manual/en/arrayaccess.offsetset.php
+     *
      * @param mixed $offset <p>
-     * The offset to assign the value to.
-     * </p>
-     * @param mixed $value <p>
-     * The value to set.
-     * </p>
-     * @return void
+     *                      The offset to assign the value to.
+     *                      </p>
+     * @param mixed $value  <p>
+     *                      The value to set.
+     *                      </p>
+     *
      * @since 5.0.0
      */
     public function offsetSet($offset, $value)
@@ -306,12 +327,14 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * Offset to unset
-     * @link https://php.net/manual/en/arrayaccess.offsetunset.php
+     * Offset to unset.
+     *
+     * @see https://php.net/manual/en/arrayaccess.offsetunset.php
+     *
      * @param mixed $offset <p>
-     * The offset to unset.
-     * </p>
-     * @return void
+     *                      The offset to unset.
+     *                      </p>
+     *
      * @since 5.0.0
      */
     public function offsetUnset($offset)
@@ -322,23 +345,28 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * String representation of object
-     * @link https://php.net/manual/en/serializable.serialize.php
+     * String representation of object.
+     *
+     * @see https://php.net/manual/en/serializable.serialize.php
+     *
      * @return string the string representation of the object or null
+     *
      * @since 5.1.0
      */
     public function serialize()
     {
-         return serialize($this->all());
+        return serialize($this->all());
     }
 
     /**
-     * Constructs the object
-     * @link https://php.net/manual/en/serializable.unserialize.php
+     * Constructs the object.
+     *
+     * @see https://php.net/manual/en/serializable.unserialize.php
+     *
      * @param string $serialized <p>
-     * The string representation of the object.
-     * </p>
-     * @return void
+     *                           The string representation of the object.
+     *                           </p>
+     *
      * @since 5.1.0
      */
     public function unserialize($serialized)
@@ -347,10 +375,13 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * Specify data which should be serialized to JSON
-     * @link https://php.net/manual/en/jsonserializable.jsonserialize.php
+     * Specify data which should be serialized to JSON.
+     *
+     * @see https://php.net/manual/en/jsonserializable.jsonserialize.php
+     *
      * @return mixed data which can be serialized by <b>json_encode</b>,
-     * which is a value of any type other than a resource.
+     *               which is a value of any type other than a resource
+     *
      * @since 5.4.0
      */
     public function jsonSerialize()
