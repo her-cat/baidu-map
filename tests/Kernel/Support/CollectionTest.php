@@ -92,14 +92,15 @@ class CollectionTest extends TestCase
 
     public function testForget()
     {
-        $collection = new Collection(['name' => 'mock-name', 'email' => 'mock-email']);
+        $collection = new Collection(['name' => 'mock-name', 'email' => 'mock-email', 'foo' => 'bar']);
 
         $collection->forget('name');
         $this->assertNull($collection->name);
 
-        $collection->forget(['email', 'email']);
+        $collection->forget(['email', 'foo']);
         $this->assertNull($collection->email);
-        $this->assertNull($collection->email);
+        $this->assertNull($collection->foo);
+        $this->assertSame([], $collection->all());
     }
 
     public function testToArray()
