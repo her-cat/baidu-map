@@ -55,6 +55,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
 
     /**
      * @param null $default
+     *
      * @return mixed
      */
     public function last($default = null)
@@ -146,7 +147,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * @param string $key
+     * @param string     $key
      * @param null|mixed $default
      *
      * @return mixed
