@@ -391,7 +391,7 @@ class Arr
      *
      * @throws \InvalidArgumentException
      */
-    public static function random(array $array, int $amount = null)
+    public static function random(array $array, $amount = null)
     {
         if (is_null($amount)) {
             return $array[array_rand($array)];
