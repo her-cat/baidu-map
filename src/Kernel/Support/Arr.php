@@ -410,7 +410,7 @@ class Arr
      *
      * @return array
      */
-    public static function set(array &$array, string $key, $value)
+    public static function set(array &$array, $key, $value)
     {
         $keys = explode('.', $key);
 
