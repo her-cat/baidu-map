@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\Tests\Kernel\Support;
 
 use HerCat\BaiduMap\Kernel\Support\Arr;
@@ -79,7 +88,7 @@ class ArrTest extends TestCase
         $array = ['name' => 'mock-name', 'age' => 18, 'foo' => 'bar'];
 
         $this->assertSame(['name' => 'mock-name', 'age' => 18], Arr::except($array, ['foo']));
-        $this->assertSame(['foo' => 'bar'] , Arr::except($array, ['name', 'age']));
+        $this->assertSame(['foo' => 'bar'], Arr::except($array, ['name', 'age']));
         $this->assertSame(['name' => 'mock-name', 'age' => 18, 'foo' => 'bar'], Arr::except($array, ['no-exists']));
     }
 
@@ -357,7 +366,7 @@ class ArrTest extends TestCase
         $array = [100, 200, 300, 400, 500, 600];
 
         $array = Arr::where($array, function ($value, $key) {
-            return $value % 200 === 0;
+            return 0 === $value % 200;
         });
 
         $this->assertSame([1 => 200, 3 => 400,  5 => 600], $array);
