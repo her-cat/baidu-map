@@ -44,18 +44,25 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
+     * @param null|mixed $default
+     *
      * @return mixed
      */
-    public function first()
+    public function first($default = null)
     {
-        return reset($this->items);
+        return empty($this->items) ? $default : reset($this->items);
     }
 
     /**
+     * @param null $default
      * @return mixed
      */
-    public function last()
+    public function last($default = null)
     {
+        if (empty($this->items)) {
+            return $default;
+        }
+
         $end = end($this->items);
 
         reset($this->items);
@@ -82,11 +89,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     {
         $keys = is_array($keys) ? $keys : func_get_args();
 
-        $items = new self($this->all());
-
-        $items->forget($keys);
-
-        return $items;
+        return new self(Arr::except($this->all(), $keys));
     }
 
     /**
@@ -97,29 +100,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
      */
     public function get($key, $default = null)
     {
-        $items = $this->all();
-
-        if (is_null($key)) {
-            return $items;
-        }
-
-        if ($this->exists($items, $key)) {
-            return $items[$key];
-        }
-
-        if (false === stripos($key, '.')) {
-            return $default;
-        }
-
-        foreach (explode('.', $key) as $segment) {
-            if (!is_array($items) || !$this->exists($items, $segment)) {
-                return $default;
-            }
-
-            $items = $items[$segment];
-        }
-
-        return $items;
+        return Arr::get($this->all(), $key, $default);
     }
 
     /**
@@ -128,21 +109,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
      */
     public function set($key, $value)
     {
-        $items = &$this->items;
-
-        $keys = explode('.', $key);
-
-        while (count($keys) > 1) {
-            $key = array_shift($keys);
-
-            if (!isset($items[$key]) || !is_array($items[$key])) {
-                $items[$key] = [];
-            }
-
-            $items = &$items[$key];
-        }
-
-        $items[array_shift($keys)] = $value;
+        Arr::set($this->items, $key, $value);
     }
 
     /**
@@ -163,35 +130,9 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
      */
     public function has($keys)
     {
-        if (is_null($keys)) {
-            return false;
-        }
-
         $keys = is_array($keys) ? $keys : func_get_args();
 
-        $items = $this->all();
-
-        if (empty($items) || [] === $keys) {
-            return false;
-        }
-
-        foreach ($keys as $key) {
-            $subKeyArray = $items;
-
-            if ($this->exists($items, $key)) {
-                continue;
-            }
-
-            foreach (explode('.', $key) as $segment) {
-                if (static::exists($subKeyArray, $segment)) {
-                    $subKeyArray = $subKeyArray[$segment];
-                } else {
-                    return false;
-                }
-            }
-        }
-
-        return true;
+        return Arr::has($this->all(), $keys);
     }
 
     /**
@@ -199,38 +140,20 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
      */
     public function forget($keys)
     {
-        $items = &$this->items;
-        $original = &$this->items;
+        $keys = is_array($keys) ? $keys : func_get_args();
 
-        $keys = (array) $keys;
+        Arr::forget($this->items, $keys);
+    }
 
-        if (0 === count($keys)) {
-            return;
-        }
-
-        foreach ($keys as $key) {
-            if ($this->exists($items, $key)) {
-                unset($items[$key]);
-
-                continue;
-            }
-
-            $parts = explode('.', $key);
-
-            $items = &$original;
-
-            while (count($parts) > 1) {
-                $part = array_shift($parts);
-
-                if ($this->exists($items, $part) && is_array($items[$part])) {
-                    unset($items[$part]);
-                } else {
-                    continue 2;
-                }
-            }
-
-            unset($items[array_shift($parts)]);
-        }
+    /**
+     * @param string $key
+     * @param null|mixed $default
+     *
+     * @return mixed
+     */
+    public function pull($key, $default = null)
+    {
+        return Arr::pull($this->items, $key, $default);
     }
 
     /**

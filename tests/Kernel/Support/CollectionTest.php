@@ -30,7 +30,8 @@ class CollectionTest extends TestCase
         $collection = new Collection(['name' => 'mock-name', 'email' => 'mock-email']);
 
         $this->assertSame('mock-name', $collection->first());
-        $this->assertSame(false, (new Collection())->first());
+        $this->assertNull((new Collection())->first());
+        $this->assertSame('default-value', (new Collection())->first('default-value'));
     }
 
     public function testLast()
@@ -38,7 +39,8 @@ class CollectionTest extends TestCase
         $collection = new Collection(['name' => 'mock-name', 'email' => 'mock-email']);
 
         $this->assertSame('mock-email', $collection->last());
-        $this->assertSame(false, (new Collection())->last());
+        $this->assertNull((new Collection())->last());
+        $this->assertSame('default-value', (new Collection())->last('default-value'));
     }
 
     public function testOnly()
@@ -92,15 +94,39 @@ class CollectionTest extends TestCase
 
     public function testForget()
     {
-        $collection = new Collection(['name' => 'mock-name', 'email' => 'mock-email', 'foo' => 'bar']);
+        $collection = new Collection([
+            'name' => 'mock-name',
+            'email' => 'mock-email',
+            'age' => 18,
+            'foo' => 'bar',
+            'bar' => 'foo',
+        ]);
 
         $collection->forget('name');
         $this->assertNull($collection->name);
 
-        $collection->forget(['email', 'foo']);
+        $collection->forget(['email', 'age']);
         $this->assertNull($collection->email);
+        $this->assertNull($collection->age);
+
+        $collection->forget('foo', 'bar');
         $this->assertNull($collection->foo);
+        $this->assertNull($collection->bar);
+
         $this->assertSame([], $collection->all());
+    }
+
+    public function testPull()
+    {
+        $collection = new Collection(['name' => 'mock-name', 'email' => 'mock-email']);
+
+        $this->assertSame('mock-name', $collection->pull('name'));
+
+        $this->assertFalse($collection->has('name'));
+        $this->assertNull($collection->pull('name'));
+        $this->assertSame('default-value', $collection->pull('name', 'default-value'));
+
+        $this->assertSame('mock-email', $collection->pull('email'));
     }
 
     public function testToArray()
