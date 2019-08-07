@@ -14,6 +14,8 @@ namespace HerCat\BaiduMap\Kernel;
 use GuzzleHttp\Client as HttpClient;
 use HerCat\BaiduMap\Kernel\Providers\ConfigServiceProvider;
 use HerCat\BaiduMap\Kernel\Providers\HttpClientServiceProvider;
+use HerCat\BaiduMap\Kernel\Providers\LogServiceProvider;
+use Monolog\Logger;
 use Pimple\Container;
 
 /**
@@ -22,6 +24,7 @@ use Pimple\Container;
  * @author her-cat <i@her-cat.com>
  *
  * @property Config     $config
+ * @property Logger     $logger
  * @property HttpClient $http_client
  */
 class ServiceContainer extends Container
@@ -36,6 +39,7 @@ class ServiceContainer extends Container
      */
     private $defaultProviders = [
         ConfigServiceProvider::class,
+        LogServiceProvider::class,
         HttpClientServiceProvider::class,
     ];
 
@@ -71,7 +75,7 @@ class ServiceContainer extends Container
     {
         $base = [
             'http' => [
-                'timeout' => 30.0,
+                'timeout' => 10.0,
                 'base_uri' => 'http://api.map.baidu.com/',
             ],
         ];

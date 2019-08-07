@@ -15,6 +15,7 @@ use GuzzleHttp\Client;
 use HerCat\BaiduMap\Kernel\Config;
 use HerCat\BaiduMap\Kernel\ServiceContainer;
 use HerCat\BaiduMap\Tests\TestCase;
+use Monolog\Logger;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
@@ -36,6 +37,7 @@ class ServiceContainerTest extends TestCase
         $this->assertInstanceOf(Config::class, $container['config']);
         $this->assertInstanceOf(Config::class, $container->config);
 
+        $this->assertInstanceOf(Logger::class, $container['logger']);
         $this->assertInstanceOf(Client::class, $container['http_client']);
 
         $container['foo'] = 'bar';

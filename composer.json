@@ -12,7 +12,8 @@
         "phpunit/phpunit": "~5",
         "mockery/mockery": "^1.2",
         "pimple/pimple": "^3.0",
-        "guzzlehttp/guzzle": "~6.0"
+        "guzzlehttp/guzzle": "~6.0",
+        "monolog/monolog": "^1.24"
     },
     "autoload": {
         "psr-4": {
