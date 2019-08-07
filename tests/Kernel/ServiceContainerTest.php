@@ -1,8 +1,16 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\Tests\Kernel;
 
-use function foo\func;
 use GuzzleHttp\Client;
 use HerCat\BaiduMap\Kernel\Config;
 use HerCat\BaiduMap\Kernel\ServiceContainer;
@@ -66,14 +74,14 @@ class FooServiceContainerTest extends ServiceContainer
     protected $defaultConfig = [
         'http' => [
             'base_uri' => 'mock-base-uri',
-        ]
+        ],
     ];
 }
 
 class FooServiceProviderTest implements ServiceProviderInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function register(Container $app)
     {

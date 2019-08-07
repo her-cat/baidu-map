@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\Kernel;
 
 use GuzzleHttp\Client as HttpClient;
@@ -64,7 +73,7 @@ class ServiceContainer extends Container
             'http' => [
                 'timeout' => 30.0,
                 'base_uri' => 'http://api.map.baidu.com/',
-            ]
+            ],
         ];
 
         return array_replace_recursive($base, $this->defaultConfig, $this->userConfig);
@@ -100,7 +109,7 @@ class ServiceContainer extends Container
 
     /**
      * @param string $name
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($name, $value)
     {
