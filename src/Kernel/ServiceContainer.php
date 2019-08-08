@@ -15,6 +15,7 @@ use GuzzleHttp\Client as HttpClient;
 use HerCat\BaiduMap\Kernel\Providers\ConfigServiceProvider;
 use HerCat\BaiduMap\Kernel\Providers\HttpClientServiceProvider;
 use HerCat\BaiduMap\Kernel\Providers\LogServiceProvider;
+use HerCat\BaiduMap\Kernel\Providers\SignatureServiceProvider;
 use Monolog\Logger;
 use Pimple\Container;
 
@@ -25,6 +26,7 @@ use Pimple\Container;
  *
  * @property Config     $config
  * @property Logger     $logger
+ * @property Signature  $signature
  * @property HttpClient $http_client
  */
 class ServiceContainer extends Container
@@ -40,6 +42,7 @@ class ServiceContainer extends Container
     private $defaultProviders = [
         ConfigServiceProvider::class,
         LogServiceProvider::class,
+        SignatureServiceProvider::class,
         HttpClientServiceProvider::class,
     ];
 
