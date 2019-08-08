@@ -18,6 +18,11 @@ use Monolog\Logger;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
+/**
+ * Class LogServiceProvider.
+ *
+ * @author her-cat <i@her-cat.com>
+ */
 class LogServiceProvider implements ServiceProviderInterface
 {
     /**
