@@ -71,7 +71,7 @@ class XMLTest extends TestCase
     {
         $content_template = '1%s%s%s234%s测试%sabcd?*_^%s@#%s%s%s';
 
-        $valid_chars = preg_replace('/(%s)+/', '', $content_template);
+        $valid_chars = str_replace('%s', '', $content_template);
         $invalid_chars = sprintf($content_template, "\x1", "\x02", "\3", "\u{05}", "\xe", "\xF", "\u{00FFFF}", "\xC", "\10");
 
         $xml_template = '<xml><foo>We shall filter out invalid chars</foo><bar>%s</bar></xml>';
