@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\Kernel;
 
 use function GuzzleHttp\Psr7\stream_for;
@@ -85,7 +94,7 @@ class Signature
      */
     public function make($uri, $method, array $params)
     {
-        strtoupper($method) === 'POST' && ksort($params);
+        'POST' === strtoupper($method) && ksort($params);
 
         $querystring = http_build_query($params);
 
@@ -128,8 +137,8 @@ class Signature
      * Applying params to requests.
      *
      * @param RequestInterface $request
-     * @param array $params
-     * @param array $appends
+     * @param array            $params
+     * @param array            $appends
      *
      * @return RequestInterface|UriInterface
      */
