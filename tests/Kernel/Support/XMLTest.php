@@ -69,10 +69,14 @@ class XMLTest extends TestCase
 
     public function testSanitize()
     {
-        $content_template = '1%s%s%s234%s测试%sabcd?*_^%s@#%s%s%s';
+        $content_template = '1%s%s%s234%s测试%sabcd?*_^%s@#%s';
 
         $valid_chars = str_replace('%s', '', $content_template);
-        $invalid_chars = sprintf($content_template, "\x1", "\x02", "\3", "\u{05}", "\xe", "\xF", "\u{00FFFF}", "\xC", "\10");
+        $invalid_chars = sprintf($content_template, "\x1", "\x02", "\3", "\xe", "\xF", "\xC", "\10");
+
+        if (substr(PHP_VERSION, 0, 3) > 7.0) {
+            $invalid_chars = sprintf("{$invalid_chars}%s%s", "\u{05}", "\u{00FFFF}");
+        }
 
         $xml_template = '<xml><foo>We shall filter out invalid chars</foo><bar>%s</bar></xml>';
 
