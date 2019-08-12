@@ -64,7 +64,7 @@ class HasHttpRequestsTest extends TestCase
 
     public function testRequest()
     {
-        $request = \Mockery::mock(DummnyForHasHttpRequestsTest::class.'[getHandlerStack]');
+        $request = \Mockery::mock(DummyForHasHttpRequestsTest::class.'[getHandlerStack]');
         $handlerStack = \Mockery::mock(HandlerStack::class);
 
         $request->allows()->getHandlerStack()->andReturn($handlerStack);
@@ -100,7 +100,7 @@ class HasHttpRequestsTest extends TestCase
     }
 }
 
-class DummnyForHasHttpRequestsTest
+class DummyForHasHttpRequestsTest
 {
     use HasHttpRequests;
 
