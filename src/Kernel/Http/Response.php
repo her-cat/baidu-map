@@ -114,7 +114,7 @@ class Response extends GuzzleResponse
      *
      * @return string
      */
-    protected function removeControlCharacters(string $content)
+    protected function removeControlCharacters($content)
     {
         return \preg_replace('/[\x00-\x1F\x80-\x9F]/u', '', $content);
     }
