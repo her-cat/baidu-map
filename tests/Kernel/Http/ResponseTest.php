@@ -53,7 +53,7 @@ class ResponseTest extends TestCase
         $this->assertSame([], $response->toArray());
 
         // #1291
-        $json = "{\"name\":\"mock-\x09name\"}";
+        $json = "{\"name\":\"我是\x09张三\"}";
 
         \json_decode($json, true);
         $this->assertSame(\JSON_ERROR_CTRL_CHAR, json_last_error());
@@ -61,6 +61,6 @@ class ResponseTest extends TestCase
         $response = new Response(200, ['Content-Type' => 'application/json'], $json);
 
         $this->assertInstanceOf(\GuzzleHttp\Psr7\Response::class, $response);
-        $this->assertSame(['name' => 'mock-name'], $response->toArray());
+        $this->assertSame(['name' => '我是张三'], $response->toArray());
     }
 }
