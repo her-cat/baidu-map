@@ -65,7 +65,12 @@ class ResponseTest extends TestCase
         $json = "{\"name\":\"我是\x09张三\"}";
 
         \json_decode($json, true);
-        $this->assertSame(\JSON_ERROR_CTRL_CHAR, json_last_error());
+
+        if (substr(PHP_VERSION, 0, 3) > 7.0) {
+            $this->assertSame(\JSON_ERROR_CTRL_CHAR, json_last_error());
+        } else {
+            $this->assertSame(\JSON_HEX_APOS, json_last_error());
+        }
 
         $response = new Response(200, ['Content-Type' => 'application/json'], $json);
 
