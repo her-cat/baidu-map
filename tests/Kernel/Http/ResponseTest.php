@@ -66,7 +66,7 @@ class ResponseTest extends TestCase
 
         \json_decode($json, true);
 
-        if (substr(PHP_VERSION, 0, 3) > 7.0) {
+        if (substr(PHP_VERSION, 0, 3) >= 7.0) {
             $this->assertSame(\JSON_ERROR_CTRL_CHAR, json_last_error());
         } else {
             $this->assertSame(\JSON_HEX_APOS, json_last_error());
