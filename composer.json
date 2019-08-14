@@ -13,7 +13,8 @@
         "mockery/mockery": "^1.2",
         "pimple/pimple": "^3.0",
         "guzzlehttp/guzzle": "~6.0",
-        "monolog/monolog": "^1.24"
+        "monolog/monolog": "^1.24",
+        "mikey179/vfsstream": "^1.6"
     },
     "autoload": {
         "psr-4": {
