@@ -9,6 +9,10 @@
         }
     ],
     "require": {
+        "ext-json": "*",
+        "ext-libxml": "*",
+        "ext-fileinfo": "*",
+        "ext-simplexml": "*",
         "pimple/pimple": "^3.0",
         "guzzlehttp/guzzle": "~6.0",
         "monolog/monolog": "^1.24"
@@ -16,7 +20,7 @@
     "require-dev": {
         "phpunit/phpunit": "~5",
         "mockery/mockery": "^1.2",
-        "mikey179/vfsStream": "^1.6"
+        "mikey179/vfsstream": "^1.6"
     },
     "autoload": {
         "psr-4": {
