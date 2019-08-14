@@ -32,7 +32,7 @@ class StreamResponse extends Response
      * @throws InvalidArgumentException
      * @throws RuntimeException
      */
-    public function save(string $directory, string $filename = '', bool $appendSuffix = true)
+    public function save($directory, $filename = '', $appendSuffix = true)
     {
         $this->getBody()->rewind();
 
@@ -79,7 +79,7 @@ class StreamResponse extends Response
      * @throws InvalidArgumentException
      * @throws RuntimeException
      */
-    public function saveAs(string $directory, string $filename, bool $appendSuffix = true)
+    public function saveAs($directory, $filename, $appendSuffix = true)
     {
         return $this->save($directory, $filename, $appendSuffix);
     }
