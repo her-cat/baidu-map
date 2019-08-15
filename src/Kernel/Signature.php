@@ -106,7 +106,7 @@ class Signature
      *
      * @param RequestInterface $request
      *
-     * @return RequestInterface|UriInterface
+     * @return RequestInterface
      */
     public function applyAkToRequest(RequestInterface $request)
     {
@@ -118,7 +118,7 @@ class Signature
      *
      * @param RequestInterface $request
      *
-     * @return RequestInterface|UriInterface
+     * @return RequestInterface
      */
     public function applySignatureToRequest(RequestInterface $request)
     {
@@ -140,14 +140,14 @@ class Signature
      * @param array            $params
      * @param array            $appends
      *
-     * @return RequestInterface|UriInterface
+     * @return RequestInterface
      */
     public function applyParamsToRequest(RequestInterface $request, array $params = [], array $appends = [])
     {
         $querystring = http_build_query(array_merge($params, $appends));
 
         return ('GET' == $request->getMethod())
-            ? $request->getUri()->withQuery($querystring)
+            ? $request->withUri($request->getUri()->withQuery($querystring))
             : $request->withBody(stream_for($querystring));
     }
 

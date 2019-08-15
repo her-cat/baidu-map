@@ -89,9 +89,9 @@ class SignatureTest extends TestCase
 
         $request = $signature->applyAkToRequest($request);
 
-        $this->assertInstanceOf(UriInterface::class, $request);
+        $this->assertInstanceOf(Request::class, $request);
 
-        $this->assertSame('name=mock-name&ak=mock-ak', $request->getQuery());
+        $this->assertSame('name=mock-name&ak=mock-ak', $request->getUri()->getQuery());
     }
 
     /**
@@ -122,8 +122,8 @@ class SignatureTest extends TestCase
         $request = new Request('GET', 'mock-uri?foo=bar');
         $request = $signature->applyParamsToRequest($request, ['foo' => 'bar'], ['name' => 'mock-name']);
 
-        $this->assertInstanceOf(UriInterface::class, $request);
-        $this->assertSame('foo=bar&name=mock-name', $request->getQuery());
+        $this->assertInstanceOf(Request::class, $request);
+        $this->assertSame('foo=bar&name=mock-name', $request->getUri()->getQuery());
 
         $request = new Request('POST', 'mock-uri', [], 'foo=bar');
         $request = $signature->applyParamsToRequest($request, ['foo' => 'bar'], ['name' => 'mock-name']);
