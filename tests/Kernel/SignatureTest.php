@@ -16,7 +16,6 @@ use HerCat\BaiduMap\Kernel\Exceptions\InvalidArgumentException;
 use HerCat\BaiduMap\Kernel\ServiceContainer;
 use HerCat\BaiduMap\Kernel\Signature;
 use HerCat\BaiduMap\Tests\TestCase;
-use Psr\Http\Message\UriInterface;
 
 class SignatureTest extends TestCase
 {
