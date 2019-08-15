@@ -14,7 +14,6 @@ namespace HerCat\BaiduMap\Kernel;
 use function GuzzleHttp\Psr7\stream_for;
 use HerCat\BaiduMap\Kernel\Exceptions\InvalidArgumentException;
 use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\UriInterface;
 
 /**
  * Class Signature.
