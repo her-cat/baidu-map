@@ -77,8 +77,8 @@ trait HasHttpRequests
     public function getHttpClient()
     {
         if (!($this->httpClient instanceof ClientInterface)) {
-            if (property_exists($this, 'app') && isset($this->app->http_client)) {
-                $this->httpClient = $this->app->http_client;
+            if (property_exists($this, 'app') && isset($this->app['http_client'])) {
+                $this->httpClient = $this->app['http_client'];
             } else {
                 $this->httpClient = new Client(['handler' => choose_handler()]);
             }
