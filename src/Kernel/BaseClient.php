@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\Kernel;
 
 use Closure;
@@ -20,7 +29,7 @@ use Psr\Log\LogLevel;
  */
 class BaseClient
 {
-    use HasHttpRequests {request as performRequest;}
+    use HasHttpRequests {request as performRequest; }
 
     /**
      * @var ServiceContainer
@@ -34,6 +43,7 @@ class BaseClient
 
     /**
      * BaseClient constructor.
+     *
      * @param ServiceContainer $app
      */
     public function __construct(ServiceContainer $app)
@@ -43,7 +53,7 @@ class BaseClient
 
     /**
      * @param string $url
-     * @param array $query
+     * @param array  $query
      *
      * @return array|Http\Response|Support\Collection|mixed|object|ResponseInterface
      *
@@ -57,7 +67,7 @@ class BaseClient
 
     /**
      * @param string $url
-     * @param array $params
+     * @param array  $params
      *
      * @return array|Http\Response|Support\Collection|mixed|object|ResponseInterface
      *
@@ -72,7 +82,7 @@ class BaseClient
     /**
      * @param string $url
      * @param string $method
-     * @param array $params
+     * @param array  $params
      *
      * @return array|Response|Support\Collection|object|ResponseInterface
      *
@@ -97,8 +107,8 @@ class BaseClient
     /**
      * @param string $url
      * @param string $method
-     * @param array $options
-     * @param bool $returnRaw
+     * @param array  $options
+     * @param bool   $returnRaw
      *
      * @return array|Http\Response|Support\Collection|mixed|object|ResponseInterface
      *
@@ -111,7 +121,7 @@ class BaseClient
             $this->registerHttpMiddlewares();
         }
 
-        $response =$this->performRequest($url, $method, $options);
+        $response = $this->performRequest($url, $method, $options);
 
         return $returnRaw ? $response : $this->castResponseToType($response, $this->app->config->get('response_type'));
     }
@@ -119,7 +129,7 @@ class BaseClient
     /**
      * @param string $url
      * @param string $method
-     * @param array $options
+     * @param array  $options
      *
      * @return Response
      *

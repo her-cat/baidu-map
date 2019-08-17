@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\Tests\Kernel;
 
 use Closure;
@@ -8,7 +17,6 @@ use GuzzleHttp\Psr7\Response;
 use HerCat\BaiduMap\Kernel\BaseClient;
 use HerCat\BaiduMap\Kernel\ServiceContainer;
 use HerCat\BaiduMap\Tests\TestCase;
-use http\Exception\RuntimeException;
 
 class BaseClientTest extends TestCase
 {
@@ -171,7 +179,7 @@ class BaseClientTest extends TestCase
 
         $result = $middleware($result['request'], $result['options']);
 
-        $signature = md5(urlencode("mock-url?ak=mock-akmock-sk"));
+        $signature = md5(urlencode('mock-url?ak=mock-akmock-sk'));
 
         $this->assertSame(
             "ak=mock-ak&sn={$signature}",
