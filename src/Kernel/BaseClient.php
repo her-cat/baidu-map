@@ -84,7 +84,7 @@ class BaseClient
      * @param string $method
      * @param array  $params
      *
-     * @return array|Response|Support\Collection|object|ResponseInterface
+     * @return array|Response|StreamResponse|Support\Collection|object|ResponseInterface
      *
      * @throws Exceptions\InvalidConfigException
      * @throws GuzzleException
