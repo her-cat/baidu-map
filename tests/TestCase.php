@@ -18,8 +18,8 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
 class TestCase extends BaseTestCase
 {
     /**
-     * @param string $name
-     * @param array|string $methods
+     * @param string                $name
+     * @param array|string          $methods
      * @param null|ServiceContainer $app
      *
      * @return Mock
