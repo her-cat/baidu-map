@@ -17,11 +17,13 @@ use HerCat\BaiduMap\Kernel\Exceptions\RuntimeException;
  * Class Factory.
  *
  * @author her-cat <i@her-cat.com>
+ *
+ * @method static WebApi\Application    webApi(array $config)
  */
 class Factory
 {
     protected static $services = [
-        // name => service
+        'webApi' => WebApi\Application::class,
     ];
 
     /**
