@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\WebApi\StaticImage;
 
 use GuzzleHttp\Exception\GuzzleException;
@@ -20,7 +29,7 @@ class Client extends BaseClient
     /**
      * @param string|float $longitude
      * @param string|float $latitude
-     * @param array $options
+     * @param array        $options
      *
      * @return array|Response|StreamResponse|Collection|object|ResponseInterface
      *
