@@ -19,10 +19,12 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  * @author her-cat <i@her-cat.com>
  *
  * @property StaticImage\Client     $static_image
+ * @property Timezone\Client        $timezone
  */
 class Application extends ServiceContainer
 {
     protected $providers = [
         StaticImage\ServiceProvider::class,
+        Timezone\ServiceProvider::class,
     ];
 }
