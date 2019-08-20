@@ -18,13 +18,16 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  *
  * @author her-cat <i@her-cat.com>
  *
- * @property StaticImage\Client     $static_image
- * @property Timezone\Client        $timezone
+ * @property StaticImage\Client             $static_image
+ * @property Timezone\Client                $timezone
+ * @property Geocode\Client                 $geocode
+ * @property Geocode\ReverseClient          $reverse_geocode
  */
 class Application extends ServiceContainer
 {
     protected $providers = [
         StaticImage\ServiceProvider::class,
         Timezone\ServiceProvider::class,
+        Geocode\ServiceProvider::class,
     ];
 }
