@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\WebApi\Geocode;
 
 use GuzzleHttp\Exception\GuzzleException;
@@ -19,7 +28,7 @@ class ReverseClient extends BaseClient
     /**
      * @param string|float $longitude
      * @param string|float $latitude
-     * @param array $options
+     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -29,7 +38,7 @@ class ReverseClient extends BaseClient
     public function get($longitude, $latitude, $options = [])
     {
         $options = array_merge([
-            'location' => sprintf('%s,%s', $latitude, $longitude)
+            'location' => sprintf('%s,%s', $latitude, $longitude),
         ], $options);
 
         return $this->httpGet('reverse_geocoding/v3', $options);
