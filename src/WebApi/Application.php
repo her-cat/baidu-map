@@ -22,6 +22,7 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  * @property Timezone\Client                $timezone
  * @property Geocode\Client                 $geocode
  * @property Geocode\ReverseClient          $reverse_geocode
+ * @property RoadTraffic\Client             $road_traffic
  */
 class Application extends ServiceContainer
 {
@@ -29,5 +30,6 @@ class Application extends ServiceContainer
         StaticImage\ServiceProvider::class,
         Timezone\ServiceProvider::class,
         Geocode\ServiceProvider::class,
+        RoadTraffic\ServiceProvider::class,
     ];
 }
