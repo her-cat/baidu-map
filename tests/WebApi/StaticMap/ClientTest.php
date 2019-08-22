@@ -9,11 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace HerCat\BaiduMap\Tests\WebApi\StaticImage;
+namespace HerCat\BaiduMap\Tests\WebApi\StaticMap;
 
 use HerCat\BaiduMap\Kernel\Http\StreamResponse;
 use HerCat\BaiduMap\Tests\TestCase;
-use HerCat\BaiduMap\WebApi\StaticImage\Client;
+use HerCat\BaiduMap\WebApi\StaticMap\Client;
 use org\bovigo\vfs\vfsStream;
 use org\bovigo\vfs\vfsStreamDirectory;
 use org\bovigo\vfs\vfsStreamWrapper;

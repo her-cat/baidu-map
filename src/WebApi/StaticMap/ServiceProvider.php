@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace HerCat\BaiduMap\WebApi\StaticImage;
+namespace HerCat\BaiduMap\WebApi\StaticMap;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
@@ -26,7 +26,7 @@ class ServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $app)
     {
-        $app['static_image'] = function ($app) {
+        $app['static_map'] = function ($app) {
             return new Client($app);
         };
     }

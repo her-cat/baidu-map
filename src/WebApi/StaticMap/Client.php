@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace HerCat\BaiduMap\WebApi\StaticImage;
+namespace HerCat\BaiduMap\WebApi\StaticMap;
 
 use GuzzleHttp\Exception\GuzzleException;
 use HerCat\BaiduMap\Kernel\BaseClient;
