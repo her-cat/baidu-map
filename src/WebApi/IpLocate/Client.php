@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\WebApi\IpLocate;
 
 use GuzzleHttp\Exception\GuzzleException;
@@ -17,7 +26,7 @@ use Psr\Http\Message\ResponseInterface;
 class Client extends BaseClient
 {
     /**
-     * @param string $ipAddress
+     * @param string      $ipAddress
      * @param string|null $coordinateType
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
