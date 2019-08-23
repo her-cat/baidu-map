@@ -20,6 +20,7 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  *
  * @property StaticMap\Client               $static_map
  * @property Timezone\Client                $timezone
+ * @property IpLocate\Client                $ip_locate
  * @property Geocode\Client                 $geocode
  * @property Geocode\ReverseClient          $reverse_geocode
  * @property RoadTraffic\Client             $road_traffic
@@ -29,6 +30,7 @@ class Application extends ServiceContainer
     protected $providers = [
         StaticMap\ServiceProvider::class,
         Timezone\ServiceProvider::class,
+        IpLocate\ServiceProvider::class,
         Geocode\ServiceProvider::class,
         RoadTraffic\ServiceProvider::class,
     ];
