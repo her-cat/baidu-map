@@ -27,7 +27,7 @@ class Client extends BaseClient
 {
     /**
      * @param string $address
-     * @param array $options
+     * @param array  $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
