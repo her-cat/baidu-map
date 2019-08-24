@@ -24,6 +24,8 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  * @property Geocode\Client                 $geocode
  * @property Geocode\ReverseClient          $reverse_geocode
  * @property RoadTraffic\Client             $road_traffic
+ * @property PlaceSuggest\Client            $place_suggest
+ * @property PlaceSuggest\AbroadClient      $abroad_place_suggest
  */
 class Application extends ServiceContainer
 {
@@ -33,5 +35,6 @@ class Application extends ServiceContainer
         IpLocate\ServiceProvider::class,
         Geocode\ServiceProvider::class,
         RoadTraffic\ServiceProvider::class,
+        PlaceSuggest\ServiceProvider::class,
     ];
 }
