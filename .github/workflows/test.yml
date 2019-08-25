@@ -11,7 +11,7 @@ jobs:
         php_version: ['5.6', '7.0', '7.1', '7.2', '7.3']
     container:
       image: nauxliu/php-ci-image:${{ matrix.php_version }}
-    step:
+    steps:
       - uses: actions/checkout@master
       - name: Install Dependencies
         run: composer install --no-progress --prefer-dist
