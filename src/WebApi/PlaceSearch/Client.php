@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\WebApi\PlaceSearch;
 
 use GuzzleHttp\Exception\GuzzleException;
@@ -19,7 +28,7 @@ class Client extends BaseClient implements PlaceSearchInterface
     /**
      * @param string $keyword
      * @param string $region
-     * @param array $options
+     * @param array  $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -41,10 +50,10 @@ class Client extends BaseClient implements PlaceSearchInterface
     }
 
     /**
-     * @param string $keyword
+     * @param string       $keyword
      * @param float|string $longitude
      * @param float|string $latitude
-     * @param array $options
+     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -66,9 +75,9 @@ class Client extends BaseClient implements PlaceSearchInterface
     }
 
     /**
-     * @param string $keyword
+     * @param string       $keyword
      * @param array|string $bounds
-     * @param array $options
+     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -91,8 +100,8 @@ class Client extends BaseClient implements PlaceSearchInterface
 
     /**
      * @param array|string $uid
-     * @param int $scope
-     * @param string $output
+     * @param int          $scope
+     * @param string       $output
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -106,7 +115,7 @@ class Client extends BaseClient implements PlaceSearchInterface
             'output' => $output,
         ];
 
-        $key = (is_array($uid) || stripos($uid, ',') !== false) ? 'uids' : 'uid';
+        $key = (is_array($uid) || false !== stripos($uid, ',')) ? 'uids' : 'uid';
 
         $params[$key] = implode(',', (array) $uid);
 
