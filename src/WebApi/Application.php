@@ -25,6 +25,7 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  * @property Geocode\ReverseClient          $reverse_geocode
  * @property RoadTraffic\Client             $road_traffic
  * @property PlaceSearch\Client             $place_search
+ * @property PlaceSearch\AbroadClient       $abroad_place_search
  * @property PlaceSuggest\Client            $place_suggest
  * @property PlaceSuggest\AbroadClient      $abroad_place_suggest
  */

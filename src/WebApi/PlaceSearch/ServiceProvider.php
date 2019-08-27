@@ -29,5 +29,9 @@ class ServiceProvider implements ServiceProviderInterface
         $app['place_search'] = function ($app) {
             return new Client($app);
         };
+
+        $app['abroad_place_search'] = function ($app) {
+            return new AbroadClient($app);
+        };
     }
 }
