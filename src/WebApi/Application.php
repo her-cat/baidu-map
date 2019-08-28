@@ -28,6 +28,7 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  * @property PlaceSearch\AbroadClient       $abroad_place_search
  * @property PlaceSuggest\Client            $place_suggest
  * @property PlaceSuggest\AbroadClient      $abroad_place_suggest
+ * @property TrackRectify\Client            $track_rectify
  */
 class Application extends ServiceContainer
 {
@@ -39,5 +40,6 @@ class Application extends ServiceContainer
         RoadTraffic\ServiceProvider::class,
         PlaceSearch\ServiceProvider::class,
         PlaceSuggest\ServiceProvider::class,
+        TrackRectify\ServiceProvider::class,
     ];
 }
