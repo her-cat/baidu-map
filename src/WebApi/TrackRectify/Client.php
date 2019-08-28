@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\WebApi\TrackRectify;
 
 use GuzzleHttp\Exception\GuzzleException;
@@ -18,7 +27,7 @@ class Client extends BaseClient
 {
     /**
      * @param string|array $points
-     * @param array $options
+     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -31,6 +40,6 @@ class Client extends BaseClient
             'point_list' => is_array($points) ? json_encode($points) : $points,
             ], $options);
 
-         return $this->httpPost('rectify/v1/track', $options);
+        return $this->httpPost('rectify/v1/track', $options);
     }
 }
