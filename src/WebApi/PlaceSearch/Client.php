@@ -35,7 +35,7 @@ class Client extends BaseClient implements PlaceSearchInterface
      * @throws GuzzleException
      * @throws InvalidConfigException
      */
-    public function region($keyword, $region, $options = [])
+    public function region($keyword, $region, array $options = [])
     {
         $options = array_merge([
             'query' => $keyword,
@@ -60,7 +60,7 @@ class Client extends BaseClient implements PlaceSearchInterface
      * @throws GuzzleException
      * @throws InvalidConfigException
      */
-    public function circle($keyword, $longitude, $latitude, $options = [])
+    public function circle($keyword, $longitude, $latitude, array $options = [])
     {
         $options = array_merge([
             'query' => $keyword,
@@ -84,7 +84,7 @@ class Client extends BaseClient implements PlaceSearchInterface
      * @throws GuzzleException
      * @throws InvalidConfigException
      */
-    public function rectangle($keyword, $bounds, $options = [])
+    public function rectangle($keyword, $bounds, array $options = [])
     {
         $options = array_merge([
             'query' => $keyword,

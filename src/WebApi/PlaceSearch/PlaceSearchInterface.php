@@ -25,7 +25,7 @@ interface PlaceSearchInterface
      *
      * @return mixed
      */
-    public function region($keyword, $region, $options = []);
+    public function region($keyword, $region, array $options = []);
 
     /**
      * @param string       $keyword
@@ -35,7 +35,7 @@ interface PlaceSearchInterface
      *
      * @return mixed
      */
-    public function circle($keyword, $longitude, $latitude, $options = []);
+    public function circle($keyword, $longitude, $latitude, array $options = []);
 
     /**
      * @param string       $keyword
@@ -44,7 +44,7 @@ interface PlaceSearchInterface
      *
      * @return mixed
      */
-    public function rectangle($keyword, $bounds, $options = []);
+    public function rectangle($keyword, $bounds, array $options = []);
 
     /**
      * @param string|array $uid
