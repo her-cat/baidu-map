@@ -1,6 +1,6 @@
 <h1 align="center"> baidu-map </h1>
 
-<p align="center"> 百度地图 SDK.</p>
+<p align="center">可能是我用过的最好用的百度地图 SDK 了</p>
 
 [![Build Status](https://travis-ci.org/her-cat/baidu-map.svg?branch=master)](https://travis-ci.org/her-cat/baidu-map) 
 [![StyleCI build status](https://github.styleci.io/repos/200389077/shield)](https://github.styleci.io/repos/200389077)
