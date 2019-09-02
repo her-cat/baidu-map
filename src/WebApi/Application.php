@@ -30,6 +30,7 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  * @property PlaceSuggest\AbroadClient      $abroad_place_suggest
  * @property TrackRectify\Client            $track_rectify
  * @property TrackMatch\Client              $track_match
+ * @property CoordsConvert\Client           $coords_convert
  */
 class Application extends ServiceContainer
 {
@@ -43,5 +44,6 @@ class Application extends ServiceContainer
         PlaceSuggest\ServiceProvider::class,
         TrackRectify\ServiceProvider::class,
         TrackMatch\ServiceProvider::class,
+        CoordsConvert\ServiceProvider::class,
     ];
 }
