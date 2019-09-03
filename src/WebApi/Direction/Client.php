@@ -1,0 +1,81 @@
+<?php
+
+namespace HerCat\BaiduMap\WebApi\Direction;
+
+use GuzzleHttp\Exception\GuzzleException;
+use HerCat\BaiduMap\Kernel\BaseClient;
+use HerCat\BaiduMap\Kernel\Exceptions\InvalidConfigException;
+use HerCat\BaiduMap\Kernel\Http\Response;
+use HerCat\BaiduMap\Kernel\Support\Collection;
+use Psr\Http\Message\ResponseInterface;
+
+/**
+ * Class Client.
+ *
+ * @author her-cat <i@her-cat.com>
+ */
+class Client extends BaseClient
+{
+    /**
+     * @param string $origin
+     * @param string $destination
+     * @param array $options
+     *
+     * @return array|Response|Collection|mixed|object|ResponseInterface
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
+     */
+    public function transit($origin, $destination, array $options = [])
+    {
+        $options = array_merge(compact('origin', 'destination'), $options);
+
+        if ($this->app->config->has('sk')) {
+            $options['timestamp'] = time();
+        }
+
+        return $this->httpGet('direction/v2/transit', $options);
+    }
+
+    /**
+     * @param string $origin
+     * @param string $destination
+     * @param array $options
+     *
+     * @return array|Response|Collection|mixed|object|ResponseInterface
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
+     */
+    public function riding($origin, $destination, array $options = [])
+    {
+        $options = array_merge(compact('origin', 'destination'), $options);
+
+        if ($this->app->config->has('sk')) {
+            $options['timestamp'] = time();
+        }
+
+        return $this->httpGet('direction/v2/riding', $options);
+    }
+
+    /**
+     * @param string $origin
+     * @param string $destination
+     * @param array $options
+     *
+     * @return array|Response|Collection|mixed|object|ResponseInterface
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
+     */
+    public function driving($origin, $destination, array $options = [])
+    {
+        $options = array_merge(compact('origin', 'destination'), $options);
+
+        if ($this->app->config->has('sk')) {
+            $options['timestamp'] = time();
+        }
+
+        return $this->httpGet('direction/v2/driving', $options);
+    }
+}
