@@ -42,6 +42,11 @@ class BaseClient
     protected $baseUri;
 
     /**
+     * @var bool
+     */
+    protected $needSignature = true;
+
+    /**
      * BaseClient constructor.
      *
      * @param ServiceContainer $app
@@ -77,6 +82,21 @@ class BaseClient
     public function httpPost($url, array $params = [])
     {
         return $this->request($url, 'POST', ['form_params' => $params]);
+    }
+
+    /**
+     * @param string $url
+     * @param array $params
+     *
+     * @param array $query
+     * @return array|Http\Response|Support\Collection|mixed|object|ResponseInterface
+     *
+     * @throws Exceptions\InvalidConfigException
+     * @throws GuzzleException
+     */
+    public function httpPostJson($url, array $params = [], array $query = [])
+    {
+        return $this->request($url, 'POST', ['json' => $params, 'query' => $query]);
     }
 
     /**
@@ -146,10 +166,12 @@ class BaseClient
      */
     protected function registerHttpMiddlewares()
     {
-        $this->pushMiddleware($this->akMiddleware(), 'ak');
+        if ($this->needSignature) {
+            $this->pushMiddleware($this->akMiddleware(), 'ak');
 
-        if ($this->app->config->has('sk')) {
-            $this->pushMiddleware($this->signatureMiddleware(), 'signature');
+            if ($this->app->config->has('sk')) {
+                $this->pushMiddleware($this->signatureMiddleware(), 'signature');
+            }
         }
 
         $this->pushMiddleware($this->logMiddleware(), 'log');
