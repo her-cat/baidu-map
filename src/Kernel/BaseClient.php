@@ -86,9 +86,9 @@ class BaseClient
 
     /**
      * @param string $url
-     * @param array $params
+     * @param array  $params
+     * @param array  $query
      *
-     * @param array $query
      * @return array|Http\Response|Support\Collection|mixed|object|ResponseInterface
      *
      * @throws Exceptions\InvalidConfigException
