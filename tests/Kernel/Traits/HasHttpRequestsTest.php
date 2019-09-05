@@ -77,9 +77,11 @@ class HasHttpRequestsTest extends TestCase
         $client->expects()->request('POST', 'foo/bar', [
             'handler' => $handlerStack,
             'base_uri' => 'mock-url',
+            'body' => '{"name":"中文"}',
+            'headers' => ['Content-Type' => 'application/json'],
         ])->andReturn($response);
 
-        $this->assertSame($response, $request->request('foo/bar', 'POST'));
+        $this->assertSame($response, $request->request('foo/bar', 'POST', ['json' => ['name' => '中文']]));
     }
 
     public function testHandlerStack()
@@ -97,6 +99,38 @@ class HasHttpRequestsTest extends TestCase
         $handlerStack2 = \Mockery::mock(HandlerStack::class);
         $request->setHandlerStack($handlerStack2);
         $this->assertSame($handlerStack2, $request->getHandlerStack());
+    }
+
+    public function testFixJsonIssue()
+    {
+        $request = \Mockery::mock(HasHttpRequests::class);
+
+        $this->assertEmpty($request->fixJsonIssue([]));
+        $this->assertSame(['json' => '{"foo":"bar"}'], $request->fixJsonIssue(['json' => '{"foo":"bar"}']));
+
+        $this->assertSame(
+            ['headers' => ['mock-key' => 'mock-value', 'Content-Type' => 'application/json'], 'body' => '{"foo":"bar"}'],
+            $request->fixJsonIssue(['json' => ['foo' => 'bar'], 'headers' => ['mock-key' => 'mock-value']])
+        );
+
+        $this->assertSame(
+            ['headers' => ['Content-Type' => 'application/json'], 'body' => '{}'],
+            $request->fixJsonIssue(['json' => []])
+        );
+
+        $this->assertSame(
+            ['headers' => ['Content-Type' => 'application/json'], 'body' => '{}'],
+            $request->fixJsonIssue(['json' => []])
+        );
+
+        $options = $request->fixJsonIssue(['json' => ['name' => '中文不编码']]);
+
+        $this->assertSame(
+            ['headers' => ['Content-Type' => 'application/json'], 'body' => '{"name":"中文不编码"}'],
+            $options
+        );
+
+        $this->assertArrayNotHasKey('json', $options);
     }
 }
 

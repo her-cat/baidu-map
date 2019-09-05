@@ -47,6 +47,17 @@ class BaseClientTest extends TestCase
         $this->assertSame('mock-result', $client->httpPost('mock-uri', ['foo' => 'bar']));
     }
 
+    public function testHttpPostJson()
+    {
+        $client = $this->mockClient('request');;
+
+        $client->expects()
+            ->request('mock-uri', 'POST', ['json' => ['foo' => 'bar'], 'query' => ['bar' => 'foo']])
+            ->andReturn('mock-result');
+
+        $this->assertSame('mock-result', $client->httpPostJson('mock-uri', ['foo' => 'bar'], ['bar' => 'foo']));
+    }
+
     public function testHttpGetStreamWithNonStreamResponse()
     {
         $app = new ServiceContainer(['response_type' => 'array']);
