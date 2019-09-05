@@ -49,7 +49,7 @@ class BaseClientTest extends TestCase
 
     public function testHttpPostJson()
     {
-        $client = $this->mockClient('request');;
+        $client = $this->mockClient('request');
 
         $client->expects()
             ->request('mock-uri', 'POST', ['json' => ['foo' => 'bar'], 'query' => ['bar' => 'foo']])
