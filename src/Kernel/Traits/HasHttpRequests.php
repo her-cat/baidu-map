@@ -182,7 +182,7 @@ trait HasHttpRequests
     {
         if (isset($options['json']) && is_array($options['json'])) {
             $options['headers'] = array_merge(
-                isset($options['headers']) ? $options : [],
+                isset($options['headers']) ? $options['headers'] : [],
                 ['Content-Type' => 'application/json']
             );
 
