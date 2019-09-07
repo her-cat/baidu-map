@@ -27,7 +27,7 @@ class TestCase extends BaseTestCase
     public function mockApiClient($name, $methods = [], $app = null)
     {
         $methods = implode(',', array_merge([
-            'httpGet', 'httpPost', 'httpGetStream',
+            'httpGet', 'httpPost', 'httpPostJson', 'httpGetStream',
             'request', 'requestRaw', 'registerHttpMiddlewares',
         ], (array) $methods));
 
