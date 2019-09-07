@@ -1,9 +1,17 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\WebApi\BatchRequest;
 
 use GuzzleHttp\Exception\GuzzleException;
-use function GuzzleHttp\Psr7\parse_query;
 use HerCat\BaiduMap\Kernel\BaseClient;
 use HerCat\BaiduMap\Kernel\Exceptions\InvalidArgumentException;
 use HerCat\BaiduMap\Kernel\Exceptions\InvalidConfigException;
@@ -39,7 +47,7 @@ class Client extends BaseClient
 
             $url = parse_url($value['url']);
 
-            if (empty($url['query']) || stripos($url['query'], 'ak=') === false) {
+            if (empty($url['query']) || false === stripos($url['query'], 'ak=')) {
                 $value['url'] .= sprintf('%sak=%s', empty($url['query']) ? '?' : '&', $ak);
             }
 
