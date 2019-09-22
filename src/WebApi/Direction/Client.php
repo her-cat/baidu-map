@@ -28,7 +28,7 @@ class Client extends BaseClient
     /**
      * @param string|array $origin
      * @param string|array $destination
-     * @param array  $options
+     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -52,7 +52,7 @@ class Client extends BaseClient
     /**
      * @param string|array $origin
      * @param string|array $destination
-     * @param array  $options
+     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -76,7 +76,7 @@ class Client extends BaseClient
     /**
      * @param string|array $origin
      * @param string|array $destination
-     * @param array  $options
+     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
