@@ -26,8 +26,8 @@ use Psr\Http\Message\ResponseInterface;
 class Client extends BaseClient
 {
     /**
-     * @param string $origin
-     * @param string $destination
+     * @param string|array $origin
+     * @param string|array $destination
      * @param array  $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
@@ -37,7 +37,10 @@ class Client extends BaseClient
      */
     public function transit($origin, $destination, array $options = [])
     {
-        $options = array_merge(compact('origin', 'destination'), $options);
+        $options = array_merge([
+            'origin' => implode(',', (array) $origin),
+            'destination' => implode(',', (array) $destination),
+        ], $options);
 
         if ($this->app->config->has('sk')) {
             $options['timestamp'] = time();
@@ -47,8 +50,8 @@ class Client extends BaseClient
     }
 
     /**
-     * @param string $origin
-     * @param string $destination
+     * @param string|array $origin
+     * @param string|array $destination
      * @param array  $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
@@ -58,7 +61,10 @@ class Client extends BaseClient
      */
     public function riding($origin, $destination, array $options = [])
     {
-        $options = array_merge(compact('origin', 'destination'), $options);
+        $options = array_merge([
+            'origin' => implode(',', (array) $origin),
+            'destination' => implode(',', (array) $destination),
+        ], $options);
 
         if ($this->app->config->has('sk')) {
             $options['timestamp'] = time();
@@ -68,8 +74,8 @@ class Client extends BaseClient
     }
 
     /**
-     * @param string $origin
-     * @param string $destination
+     * @param string|array $origin
+     * @param string|array $destination
      * @param array  $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
@@ -79,7 +85,10 @@ class Client extends BaseClient
      */
     public function driving($origin, $destination, array $options = [])
     {
-        $options = array_merge(compact('origin', 'destination'), $options);
+        $options = array_merge([
+            'origin' => implode(',', (array) $origin),
+            'destination' => implode(',', (array) $destination),
+        ], $options);
 
         if ($this->app->config->has('sk')) {
             $options['timestamp'] = time();

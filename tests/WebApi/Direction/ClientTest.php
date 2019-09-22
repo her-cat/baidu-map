@@ -30,6 +30,7 @@ class ClientTest extends TestCase
         ])->andReturn('mock-result');
 
         $this->assertSame('mock-result', $client->transit('mock-lat,mock-lng', 'mock-lat2,mock-lng2', ['foo' => 'bar']));
+        $this->assertSame('mock-result', $client->transit(['mock-lat', 'mock-lng'], ['mock-lat2', 'mock-lng2'], ['foo' => 'bar']));
     }
 
     public function testRiding()
@@ -45,6 +46,7 @@ class ClientTest extends TestCase
         ])->andReturn('mock-result');
 
         $this->assertSame('mock-result', $client->riding('mock-lat,mock-lng', 'mock-lat2,mock-lng2', ['foo' => 'bar']));
+        $this->assertSame('mock-result', $client->riding(['mock-lat', 'mock-lng'], ['mock-lat2', 'mock-lng2'], ['foo' => 'bar']));
     }
 
     public function testDriving()
@@ -60,5 +62,6 @@ class ClientTest extends TestCase
         ])->andReturn('mock-result');
 
         $this->assertSame('mock-result', $client->driving('mock-lat,mock-lng', 'mock-lat2,mock-lng2', ['foo' => 'bar']));
+        $this->assertSame('mock-result', $client->driving(['mock-lat', 'mock-lng'], ['mock-lat2', 'mock-lng2'], ['foo' => 'bar']));
     }
 }
