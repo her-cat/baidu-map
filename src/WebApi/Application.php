@@ -32,6 +32,8 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  * @property TrackMatch\Client              $track_match
  * @property CoordsConvert\Client           $coords_convert
  * @property Direction\Client               $direction
+ * @property Direction\LiteClient           $direction_lite
+ * @property Direction\AbroadClient         $direction_abroad
  * @property BatchRequest\Client            $batch_request
  */
 class Application extends ServiceContainer

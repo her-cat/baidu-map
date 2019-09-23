@@ -29,5 +29,13 @@ class ServiceProvider implements ServiceProviderInterface
         $app['direction'] = function ($app) {
             return new Client($app);
         };
+
+        $app['direction_lite'] = function ($app) {
+            return new LiteClient($app);
+        };
+
+        $app['direction_abroad'] = function ($app) {
+            return new AbroadClient($app);
+        };
     }
 }
