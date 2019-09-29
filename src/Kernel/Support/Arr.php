@@ -117,8 +117,8 @@ class Arr
     /**
      * Determine if the given key exists in the provided array.
      *
-     * @param array $array
-     * @param string|int         $key
+     * @param array      $array
+     * @param string|int $key
      *
      * @return bool
      */
@@ -244,9 +244,9 @@ class Arr
     /**
      * Get an item from an array using "dot" notation.
      *
-     * @param array $array
-     * @param string             $key
-     * @param mixed              $default
+     * @param array  $array
+     * @param string $key
+     * @param mixed  $default
      *
      * @return mixed
      */
@@ -274,8 +274,8 @@ class Arr
     /**
      * Check if an item or items exist in an array using "dot" notation.
      *
-     * @param array $array
-     * @param string|array       $keys
+     * @param array        $array
+     * @param string|array $keys
      *
      * @return bool
      */
