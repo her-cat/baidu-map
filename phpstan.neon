@@ -1,0 +1,8 @@
+parameters:
+    level: 3
+    paths:
+        - src
+    inferPrivatePropertyTypeFromConstructor: true
+    ignoreErrors:
+        - '#HerCat\\BaiduMap\\Kernel\\Exceptions\\InvalidConfigException is not subtype of Throwable#'
+        - '#Default value of the parameter \#2 \$depth \(INF.0\) of method HerCat\\BaiduMap\\Kernel\\Support\\Arr::flatten\(\) is incompatible with type int.#'
