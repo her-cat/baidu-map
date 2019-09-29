@@ -95,7 +95,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
 
     /**
      * @param string $key
-     * @param null $default
+     * @param null   $default
      *
      * @return array|mixed|null
      */
@@ -106,7 +106,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
 
     /**
      * @param string $key
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function set($key, $value)
     {
@@ -314,7 +314,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
 
     /**
      * @param string $key
-     * @param mixed $value
+     * @param mixed  $value
      */
     public function __set($key, $value)
     {

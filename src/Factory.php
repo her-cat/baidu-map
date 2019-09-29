@@ -45,7 +45,7 @@ class Factory
 
     /**
      * @param string $name
-     * @param array $arguments
+     * @param array  $arguments
      *
      * @return mixed
      *
