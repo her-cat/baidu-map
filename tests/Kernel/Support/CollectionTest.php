@@ -214,7 +214,6 @@ class CollectionTest extends TestCase
         $this->assertSame(['key2' => 'mock-value'], $collection->get('key.key1'));
         $this->assertSame('mock-value', $collection->get('key.key1.key2'));
         $this->assertSame('default-value', $collection->get('no-exists', 'default-value'));
-        $this->assertTrue($collection->exists($array, 'foo'));
 
         $this->assertSame('value1', $collection->get('arr.0.key'));
         $this->assertSame('value2', $collection->get('arr.1.key'));

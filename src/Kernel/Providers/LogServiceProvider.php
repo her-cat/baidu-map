@@ -12,6 +12,7 @@
 namespace HerCat\BaiduMap\Kernel\Providers;
 
 use HerCat\BaiduMap\Kernel\Exceptions\Exception;
+use HerCat\BaiduMap\Kernel\ServiceContainer;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
@@ -40,13 +41,13 @@ class LogServiceProvider implements ServiceProviderInterface
     }
 
     /**
-     * @param $app
+     * @param ServiceContainer $app
      *
      * @return RotatingFileHandler
      *
      * @throws Exception
      */
-    public function getDefaultHandler($app)
+    public function getDefaultHandler(ServiceContainer $app)
     {
         $handler = new RotatingFileHandler(
             $app->config->get('log.file', sprintf('%s/logs/baidu-map.log', \sys_get_temp_dir())),

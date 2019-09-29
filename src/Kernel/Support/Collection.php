@@ -94,7 +94,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * @param $key
+     * @param string $key
      * @param null $default
      *
      * @return array|mixed|null
@@ -106,22 +106,11 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
 
     /**
      * @param string $key
-     * @param $value
+     * @param mixed $value
      */
     public function set($key, $value)
     {
         Arr::set($this->items, $key, $value);
-    }
-
-    /**
-     * @param array $array
-     * @param $key
-     *
-     * @return bool
-     */
-    public function exists(array $array, $key)
-    {
-        return array_key_exists($key, $array);
     }
 
     /**
@@ -314,7 +303,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * @param $key
+     * @param string $key
      *
      * @return array|mixed|null
      */
@@ -324,8 +313,8 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * @param $key
-     * @param $value
+     * @param string $key
+     * @param mixed $value
      */
     public function __set($key, $value)
     {
@@ -333,7 +322,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * @param $key
+     * @param string $key
      *
      * @return bool
      */
@@ -343,7 +332,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * @param $key
+     * @param string $key
      */
     public function __unset($key)
     {

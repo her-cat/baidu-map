@@ -38,9 +38,9 @@ trait ResponseCastable
         $response = Response::buildFromPsrResponse($response);
         $response->getBody()->rewind();
 
-        $type = !is_null($type) ? $type : 'array';
+        $targetType = !is_null($type) ? $type : 'array';
 
-        switch ($type) {
+        switch ($targetType) {
             case 'collection':
                 return $response->toCollection();
             case 'array':

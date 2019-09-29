@@ -117,7 +117,7 @@ class Arr
     /**
      * Determine if the given key exists in the provided array.
      *
-     * @param \ArrayAccess|array $array
+     * @param array $array
      * @param string|int         $key
      *
      * @return bool
@@ -244,7 +244,7 @@ class Arr
     /**
      * Get an item from an array using "dot" notation.
      *
-     * @param \ArrayAccess|array $array
+     * @param array $array
      * @param string             $key
      * @param mixed              $default
      *
@@ -274,7 +274,7 @@ class Arr
     /**
      * Check if an item or items exist in an array using "dot" notation.
      *
-     * @param \ArrayAccess|array $array
+     * @param array $array
      * @param string|array       $keys
      *
      * @return bool

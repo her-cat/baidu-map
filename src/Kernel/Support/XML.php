@@ -19,7 +19,7 @@ namespace HerCat\BaiduMap\Kernel\Support;
 class XML
 {
     /**
-     * @param $str
+     * @param string $str
      *
      * @return array|null
      */
@@ -35,7 +35,7 @@ class XML
     }
 
     /**
-     * @param $obj
+     * @param mixed $obj
      *
      * @return array|null
      */

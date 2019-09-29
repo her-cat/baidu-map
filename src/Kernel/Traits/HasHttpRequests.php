@@ -119,7 +119,7 @@ trait HasHttpRequests
     /**
      * Make a request.
      *
-     * @param $url
+     * @param string $url
      * @param string $method
      * @param array  $options
      *
