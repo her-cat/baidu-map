@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the her-cat/baidu-map.
+ *
+ * (c) her-cat <i@her-cat.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace HerCat\BaiduMap\WebApi\Direction;
 
 use GuzzleHttp\Exception\GuzzleException;
@@ -19,7 +28,7 @@ class AbroadClient extends BaseClient
     /**
      * @param string|array $origin
      * @param string|array $destination
-     * @param array $options
+     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
