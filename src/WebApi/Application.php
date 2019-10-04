@@ -35,6 +35,7 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  * @property Direction\LiteClient           $direction_lite
  * @property Direction\AbroadClient         $direction_abroad
  * @property BatchRequest\Client            $batch_request
+ * @property RouteMatrix\Client             $route_matrix
  */
 class Application extends ServiceContainer
 {
@@ -51,5 +52,6 @@ class Application extends ServiceContainer
         CoordsConvert\ServiceProvider::class,
         Direction\ServiceProvider::class,
         BatchRequest\ServiceProvider::class,
+        RouteMatrix\ServiceProvider::class,
     ];
 }
