@@ -14,43 +14,73 @@ use Psr\Http\Message\ResponseInterface;
  * Class Client.
  *
  * @author her-cat <i@her-cat.com>
- *
- * @method driving($origins, $destinations, array $options = [])
- * @method riding($origins, $destinations, array $options = [])
- * @method walking($origins, $destinations, array $options = [])
  */
 class Client extends BaseClient
 {
     /**
-     * @param string $name
-     * @param array $arguments
+     * @param string|array $origins
+     * @param string|array $destinations
+     * @param array $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
      * @throws GuzzleException
      * @throws InvalidConfigException
-     * @throws InvalidArgumentException
      */
-    public function __call($name, $arguments)
+    public function driving($origins, $destinations, array $options = [])
     {
-        if (!in_array($name, ['driving', 'riding', 'walking'])) {
-            throw new InvalidArgumentException('Invalid method "%s".', $name);
-        }
-
-        if (count($arguments) < 2) {
-            throw new InvalidArgumentException('Invalid arguments');
-        }
-
-        $options = isset($arguments[2]) ? $arguments[2] : [];
-
         $options = array_merge([
-            'origins' => $this->processCoordinate($arguments[0]),
-            'destinations' => $this->processCoordinate($arguments[1]),
+            'origins' => $this->processCoordinate($origins),
+            'destinations' => $this->processCoordinate($destinations),
         ], $options);
 
-        return $this->httpGet(sprintf('routematrix/v2/%s', $name), $options);
+        return $this->httpGet('routematrix/v2/driving', $options);
     }
 
+    /**
+     * @param string|array $origins
+     * @param string|array $destinations
+     * @param array $options
+     *
+     * @return array|Response|Collection|mixed|object|ResponseInterface
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
+     */
+    public function riding($origins, $destinations, array $options = [])
+    {
+        $options = array_merge([
+            'origins' => $this->processCoordinate($origins),
+            'destinations' => $this->processCoordinate($destinations),
+        ], $options);
+
+        return $this->httpGet('routematrix/v2/riding', $options);
+    }
+
+    /**
+     * @param string|array $origins
+     * @param string|array $destinations
+     * @param array $options
+     *
+     * @return array|Response|Collection|mixed|object|ResponseInterface
+     *
+     * @throws GuzzleException
+     * @throws InvalidConfigException
+     */
+    public function walking($origins, $destinations, array $options = [])
+    {
+        $options = array_merge([
+            'origins' => $this->processCoordinate($origins),
+            'destinations' => $this->processCoordinate($destinations),
+        ], $options);
+
+        return $this->httpGet('routematrix/v2/walking', $options);
+    }
+
+    /**
+     * @param string|array $coordinate
+     * @return string
+     */
     protected function processCoordinate($coordinate)
     {
         if (is_object($coordinate)) {
