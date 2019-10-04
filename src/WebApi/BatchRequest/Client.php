@@ -29,7 +29,7 @@ class Client extends BaseClient
     protected $needSignature = false;
 
     /**
-     * @param $params
+     * @param array $params
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
