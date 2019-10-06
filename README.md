@@ -17,6 +17,12 @@
 $ composer require "her-cat/baidu-map" -vvv
 ```
 
+## 单元测试
+
+```shell
+$ composer test
+```
+
 ## 使用
 
 ```php
