@@ -1,29 +1,59 @@
-<h1 align="center"> baidu-map </h1>
+<h1 align="center"> 🗺️ baidu-map </h1>
 
 <p align="center">可能是我用过的最好用的百度地图 SDK 了</p>
 
 [![Build Status](https://travis-ci.org/her-cat/baidu-map.svg?branch=master)](https://travis-ci.org/her-cat/baidu-map) 
 [![StyleCI build status](https://github.styleci.io/repos/200389077/shield)](https://github.styleci.io/repos/200389077)
 
-## Installing
+## 环境要求
+
+- PHP >= 5.6
+- [Composer](https://getcomposer.org/)
+- fileinfo 拓展（获取静态图需要用到）
+
+## 安装
 
 ```shell
-$ composer require her-cat/baidu-map -vvv
+$ composer require "her-cat/baidu-map" -vvv
 ```
 
-## Usage
+## 使用
 
-TODO
+```php
+<?php
 
-## Contributing
+use HerCat\BaiduMap\Factory;
 
-You can contribute in one of three ways:
+$config = [
+    'ak' => 'your ak',
+//    'sk' => 'your sk',
+    'log' => [
+        'file' => './baidu-map.log'
+    ],
+    'response_type' => 'array',
+];
 
-1. File bug reports using the [issue tracker](https://github.com/hercat//baidu-map/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/hercat//baidu-map/issues).
-3. Contribute new features or update the wiki.
+$webApi = Factory::webApi($config);
 
-_The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._
+$result = $webApi->timezone->get('116.30815', '40.056878');
+
+//    Array
+//    (
+//        [status] => 0
+//        [timezone_id] => Asia/Shanghai
+//        [dst_offset] => 0
+//        [raw_offset] => 28800
+//    )
+```
+
+## 文档
+
+- 编写中
+
+## 参考
+
+- [overtrue/wechat](https://github.com/overtrue/wechat)
+- [PHP 扩展包实战教程 - 从入门到发布](https://learnku.com/courses/creating-package)
 
 ## License
 
