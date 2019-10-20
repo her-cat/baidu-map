@@ -45,7 +45,7 @@ class LiteClientTest extends TestCase
     {
         $methods = LiteClient::ALLOWED_METHODS;
 
-        $method = $methods[mt_rand(0, count($methods))];
+        $method = $methods[mt_rand(0, count($methods) - 1)];
 
         $client = $this->mockApiClient(LiteClient::class);
 

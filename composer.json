@@ -9,10 +9,6 @@
         }
     ],
     "require": {
-        "ext-json": "*",
-        "ext-libxml": "*",
-        "ext-fileinfo": "*",
-        "ext-simplexml": "*",
         "pimple/pimple": "^3.0",
         "guzzlehttp/guzzle": "~6.0",
         "monolog/monolog": "^1.24"
