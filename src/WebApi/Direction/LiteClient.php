@@ -34,10 +34,10 @@ class LiteClient extends BaseClient
     const ALLOWED_METHODS = ['driving', 'riding', 'walking', 'transit'];
 
     /**
-     * @param string $method
+     * @param string       $method
      * @param string|array $origin
      * @param string|array $destination
-     * @param array $options
+     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -64,7 +64,7 @@ class LiteClient extends BaseClient
 
     /**
      * @param string $name
-     * @param array $arguments
+     * @param array  $arguments
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
