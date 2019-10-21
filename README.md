@@ -54,7 +54,13 @@ $result = $webApi->timezone->get('116.30815', '40.056878');
 
 ## 文档
 
-- 编写中
+[详细文档](http://doc.hxhsoft.cn/docs)
+
+## Features
+
+- [ ] [LBS云](http://lbsyun.baidu.com/index.php?title=lbscloud)
+- [x] [Web服务API](http://lbsyun.baidu.com/index.php?title=webapi)
+- [ ] [鹰眼轨迹服务](http://lbsyun.baidu.com/index.php?title=yingyan)
 
 ## 参考
 
