@@ -37,5 +37,9 @@ class ServiceProvider implements ServiceProviderInterface
         $app['direction_abroad'] = function ($app) {
             return new AbroadClient($app);
         };
+
+        $app['direction_logistics'] = function ($app) {
+            return new LogisticsClient($app);
+        };
     }
 }

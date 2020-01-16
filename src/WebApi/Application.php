@@ -34,6 +34,7 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  * @property Direction\Client               $direction
  * @property Direction\LiteClient           $direction_lite
  * @property Direction\AbroadClient         $direction_abroad
+ * @property Direction\LogisticsClient      $direction_logistics
  * @property BatchRequest\Client            $batch_request
  * @property RouteMatrix\Client             $route_matrix
  */
