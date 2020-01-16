@@ -13,7 +13,7 @@ namespace HerCat\BaiduMap\WebApi\Direction;
 
 use HerCat\BaiduMap\Kernel\BaseClient;
 
-class LogisticsClient extends BaseClient 
+class LogisticsClient extends BaseClient
 {
     /**
      * @param string|array $origin
