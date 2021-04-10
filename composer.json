@@ -11,7 +11,7 @@
     "require": {
         "php": ">=5.6",
         "pimple/pimple": "^3.0",
-        "guzzlehttp/guzzle": "~6.0",
+        "guzzlehttp/guzzle": "^7.3",
         "monolog/monolog": "^1.24"
     },
     "require-dev": {
