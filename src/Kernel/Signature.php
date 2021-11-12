@@ -11,7 +11,7 @@
 
 namespace HerCat\BaiduMap\Kernel;
 
-use function GuzzleHttp\Psr7\stream_for;
+use GuzzleHttp\Psr7\Utils;
 use HerCat\BaiduMap\Kernel\Exceptions\InvalidArgumentException;
 use Psr\Http\Message\RequestInterface;
 
@@ -147,7 +147,7 @@ class Signature
 
         return ('GET' == $request->getMethod())
             ? $request->withUri($request->getUri()->withQuery($querystring))
-            : $request->withBody(stream_for($querystring));
+            : $request->withBody(Utils::streamFor($querystring));
     }
 
     /**
