@@ -35,8 +35,6 @@ class Signature
     /**
      * Signature constructor.
      *
-     * @param ServiceContainer $app
-     *
      * @throws InvalidArgumentException
      */
     public function __construct(ServiceContainer $app)
@@ -87,7 +85,6 @@ class Signature
      *
      * @param string $uri
      * @param string $method
-     * @param array  $params
      *
      * @return string
      */
@@ -103,8 +100,6 @@ class Signature
     /**
      * Applying app ak to requests.
      *
-     * @param RequestInterface $request
-     *
      * @return RequestInterface
      */
     public function applyAkToRequest(RequestInterface $request)
@@ -114,8 +109,6 @@ class Signature
 
     /**
      * Applying signature to requests.
-     *
-     * @param RequestInterface $request
      *
      * @return RequestInterface
      */
@@ -135,10 +128,6 @@ class Signature
     /**
      * Applying params to requests.
      *
-     * @param RequestInterface $request
-     * @param array            $params
-     * @param array            $appends
-     *
      * @return RequestInterface
      */
     public function applyParamsToRequest(RequestInterface $request, array $params = [], array $appends = [])
@@ -152,8 +141,6 @@ class Signature
 
     /**
      * Get the requests params.
-     *
-     * @param RequestInterface $request
      *
      * @return array
      */

@@ -21,7 +21,6 @@ interface PlaceSearchInterface
     /**
      * @param string $keyword
      * @param string $region
-     * @param array  $options
      *
      * @return mixed
      */
@@ -31,7 +30,6 @@ interface PlaceSearchInterface
      * @param string       $keyword
      * @param string|float $longitude
      * @param string|float $latitude
-     * @param array        $options
      *
      * @return mixed
      */
@@ -40,7 +38,6 @@ interface PlaceSearchInterface
     /**
      * @param string       $keyword
      * @param string|array $bounds
-     * @param array        $options
      *
      * @return mixed
      */

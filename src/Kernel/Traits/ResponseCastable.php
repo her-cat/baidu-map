@@ -26,8 +26,7 @@ use Psr\Http\Message\ResponseInterface;
 trait ResponseCastable
 {
     /**
-     * @param ResponseInterface $response
-     * @param null              $type
+     * @param null $type
      *
      * @return array|Response|Collection|object|ResponseInterface
      *
