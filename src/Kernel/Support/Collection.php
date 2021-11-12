@@ -25,8 +25,6 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
 
     /**
      * Collection constructor.
-     *
-     * @param array $items
      */
     public function __construct(array $items = [])
     {
@@ -44,7 +42,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
     }
 
     /**
-     * @param null|mixed $default
+     * @param mixed|null $default
      *
      * @return mixed
      */
@@ -137,7 +135,7 @@ class Collection implements \Countable, \ArrayAccess, \Serializable, \JsonSerial
 
     /**
      * @param string     $key
-     * @param null|mixed $default
+     * @param mixed|null $default
      *
      * @return mixed
      */

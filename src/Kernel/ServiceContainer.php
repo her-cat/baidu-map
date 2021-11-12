@@ -58,9 +58,6 @@ class ServiceContainer extends Container
 
     /**
      * ServiceContainer constructor.
-     *
-     * @param array $config
-     * @param array $prepends
      */
     public function __construct(array $config = [], array $prepends = [])
     {
@@ -86,9 +83,6 @@ class ServiceContainer extends Container
         return array_replace_recursive($base, $this->defaultConfig, $this->userConfig);
     }
 
-    /**
-     * @param array $providers
-     */
     protected function registerProviders(array $providers)
     {
         foreach ($providers as $provider) {

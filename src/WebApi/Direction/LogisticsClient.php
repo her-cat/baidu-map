@@ -18,7 +18,6 @@ class LogisticsClient extends BaseClient
     /**
      * @param string|array $origin
      * @param string|array $destination
-     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *

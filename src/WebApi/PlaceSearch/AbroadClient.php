@@ -28,7 +28,6 @@ class AbroadClient extends BaseClient implements PlaceSearchInterface
     /**
      * @param string $keyword
      * @param string $region
-     * @param array  $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -53,7 +52,6 @@ class AbroadClient extends BaseClient implements PlaceSearchInterface
      * @param string       $keyword
      * @param string|float $longitude
      * @param string|float $latitude
-     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -77,7 +75,6 @@ class AbroadClient extends BaseClient implements PlaceSearchInterface
     /**
      * @param string       $keyword
      * @param string|array $bounds
-     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *

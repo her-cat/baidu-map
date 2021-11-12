@@ -63,9 +63,6 @@ trait HasHttpRequests
         return self::$defaults;
     }
 
-    /**
-     * @param ClientInterface $client
-     */
     public function setHttpClient(ClientInterface $client)
     {
         $this->httpClient = $client;
@@ -90,7 +87,6 @@ trait HasHttpRequests
     /**
      * Add a middleware.
      *
-     * @param callable    $middleware
      * @param string|null $name
      *
      * @return $this
@@ -121,7 +117,6 @@ trait HasHttpRequests
      *
      * @param string $url
      * @param string $method
-     * @param array  $options
      *
      * @return mixed|ResponseInterface
      *
@@ -145,9 +140,6 @@ trait HasHttpRequests
         return $response;
     }
 
-    /**
-     * @param HandlerStack $handlerStack
-     */
     public function setHandlerStack(HandlerStack $handlerStack)
     {
         $this->handlerStack = $handlerStack;
@@ -174,8 +166,6 @@ trait HasHttpRequests
     }
 
     /**
-     * @param array $options
-     *
      * @return array
      */
     public function fixJsonIssue(array $options)

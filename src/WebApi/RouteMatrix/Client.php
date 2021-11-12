@@ -28,7 +28,6 @@ class Client extends BaseClient
     /**
      * @param string|array $origins
      * @param string|array $destinations
-     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -48,7 +47,6 @@ class Client extends BaseClient
     /**
      * @param string|array $origins
      * @param string|array $destinations
-     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
@@ -68,7 +66,6 @@ class Client extends BaseClient
     /**
      * @param string|array $origins
      * @param string|array $destinations
-     * @param array        $options
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
