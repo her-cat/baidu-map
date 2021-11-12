@@ -48,8 +48,6 @@ class BaseClient
 
     /**
      * BaseClient constructor.
-     *
-     * @param ServiceContainer $app
      */
     public function __construct(ServiceContainer $app)
     {
@@ -58,7 +56,6 @@ class BaseClient
 
     /**
      * @param string $url
-     * @param array  $query
      *
      * @return array|Http\Response|Support\Collection|mixed|object|ResponseInterface
      *
@@ -72,7 +69,6 @@ class BaseClient
 
     /**
      * @param string $url
-     * @param array  $params
      *
      * @return array|Http\Response|Support\Collection|mixed|object|ResponseInterface
      *
@@ -86,8 +82,6 @@ class BaseClient
 
     /**
      * @param string $url
-     * @param array  $params
-     * @param array  $query
      *
      * @return array|Http\Response|Support\Collection|mixed|object|ResponseInterface
      *
@@ -102,7 +96,6 @@ class BaseClient
     /**
      * @param string $url
      * @param string $method
-     * @param array  $params
      *
      * @return array|Response|StreamResponse|Support\Collection|object|ResponseInterface
      *
@@ -127,7 +120,6 @@ class BaseClient
     /**
      * @param string $url
      * @param string $method
-     * @param array  $options
      * @param bool   $returnRaw
      *
      * @return array|Http\Response|Support\Collection|mixed|object|ResponseInterface
@@ -149,7 +141,6 @@ class BaseClient
     /**
      * @param string $url
      * @param string $method
-     * @param array  $options
      *
      * @return Response
      *
