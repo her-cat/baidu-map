@@ -67,6 +67,12 @@ $result = $webApi->timezone->get('116.30815', '40.056878');
 - [overtrue/wechat](https://github.com/overtrue/wechat)
 - [PHP 扩展包实战教程 - 从入门到发布](https://learnku.com/courses/creating-package)
 
+# Credits
+This project was created with phpstorm with open source licence.
+Thank you [jetBrains](https://www.jetbrains.com/?from=Gladys)
+
+![image.png](https://i.loli.net/2021/11/12/GwFznf5SNERQuLd.png)
+
 ## License
 
 MIT
