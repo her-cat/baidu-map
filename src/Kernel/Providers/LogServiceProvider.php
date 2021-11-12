@@ -41,8 +41,6 @@ class LogServiceProvider implements ServiceProviderInterface
     }
 
     /**
-     * @param ServiceContainer $app
-     *
      * @return RotatingFileHandler
      *
      * @throws Exception

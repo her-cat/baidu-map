@@ -29,8 +29,6 @@ class Client extends BaseClient
     protected $needSignature = false;
 
     /**
-     * @param array $params
-     *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
      * @throws GuzzleException

@@ -36,8 +36,6 @@ class Response extends GuzzleResponse
     }
 
     /**
-     * @param \Psr\Http\Message\ResponseInterface $response
-     *
      * @return Response
      */
     public static function buildFromPsrResponse(ResponseInterface $response)

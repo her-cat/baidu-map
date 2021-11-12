@@ -20,7 +20,7 @@ class TestCase extends BaseTestCase
     /**
      * @param string                $name
      * @param array|string          $methods
-     * @param null|ServiceContainer $app
+     * @param ServiceContainer|null $app
      *
      * @return Mock
      */

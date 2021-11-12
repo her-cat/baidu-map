@@ -18,25 +18,25 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  *
  * @author her-cat <i@her-cat.com>
  *
- * @property StaticMap\Client               $static_map
- * @property Timezone\Client                $timezone
- * @property IpLocate\Client                $ip_locate
- * @property Geocode\Client                 $geocode
- * @property Geocode\ReverseClient          $reverse_geocode
- * @property RoadTraffic\Client             $road_traffic
- * @property PlaceSearch\Client             $place_search
- * @property PlaceSearch\AbroadClient       $abroad_place_search
- * @property PlaceSuggest\Client            $place_suggest
- * @property PlaceSuggest\AbroadClient      $abroad_place_suggest
- * @property TrackRectify\Client            $track_rectify
- * @property TrackMatch\Client              $track_match
- * @property CoordsConvert\Client           $coords_convert
- * @property Direction\Client               $direction
- * @property Direction\LiteClient           $direction_lite
- * @property Direction\AbroadClient         $direction_abroad
- * @property Direction\LogisticsClient      $direction_logistics
- * @property BatchRequest\Client            $batch_request
- * @property RouteMatrix\Client             $route_matrix
+ * @property StaticMap\Client          $static_map
+ * @property Timezone\Client           $timezone
+ * @property IpLocate\Client           $ip_locate
+ * @property Geocode\Client            $geocode
+ * @property Geocode\ReverseClient     $reverse_geocode
+ * @property RoadTraffic\Client        $road_traffic
+ * @property PlaceSearch\Client        $place_search
+ * @property PlaceSearch\AbroadClient  $abroad_place_search
+ * @property PlaceSuggest\Client       $place_suggest
+ * @property PlaceSuggest\AbroadClient $abroad_place_suggest
+ * @property TrackRectify\Client       $track_rectify
+ * @property TrackMatch\Client         $track_match
+ * @property CoordsConvert\Client      $coords_convert
+ * @property Direction\Client          $direction
+ * @property Direction\LiteClient      $direction_lite
+ * @property Direction\AbroadClient    $direction_abroad
+ * @property Direction\LogisticsClient $direction_logistics
+ * @property BatchRequest\Client       $batch_request
+ * @property RouteMatrix\Client        $route_matrix
  */
 class Application extends ServiceContainer
 {
