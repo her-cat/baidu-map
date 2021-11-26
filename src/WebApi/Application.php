@@ -37,6 +37,7 @@ use HerCat\BaiduMap\Kernel\ServiceContainer;
  * @property Direction\LogisticsClient $direction_logistics
  * @property BatchRequest\Client       $batch_request
  * @property RouteMatrix\Client        $route_matrix
+ * @property RoadInfoAlert\Client      $road_info_alert
  */
 class Application extends ServiceContainer
 {
@@ -54,5 +55,6 @@ class Application extends ServiceContainer
         Direction\ServiceProvider::class,
         BatchRequest\ServiceProvider::class,
         RouteMatrix\ServiceProvider::class,
+        RoadInfoAlert\ServiceProvider::class,
     ];
 }
