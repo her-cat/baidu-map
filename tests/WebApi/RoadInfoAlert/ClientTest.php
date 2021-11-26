@@ -25,11 +25,11 @@ class ClientTest extends TestCase
 
         $points = [
             [
-                "loc_time" => 1556162073,
-                "coord_type_input" => "bd09ll",
-                "latitude" => 39.950124,
-                "longitude" => 115.799985,
-                "speed" => 59.9
+                'loc_time' => 1556162073,
+                'coord_type_input' => 'bd09ll',
+                'latitude' => 39.950124,
+                'longitude' => 115.799985,
+                'speed' => 59.9,
             ],
         ];
 

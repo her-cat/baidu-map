@@ -27,8 +27,8 @@ class Client extends BaseClient
 {
     /**
      * @param array|string $points
-     * @param string $carType
-     * @param string $coordinateType
+     * @param string       $carType
+     * @param string       $coordinateType
      *
      * @return array|Response|Collection|mixed|object|ResponseInterface
      *
