@@ -54,7 +54,7 @@ $result = $webApi->timezone->get('116.30815', '40.056878');
 
 ## 文档
 
-[详细文档](http://doc.hxhsoft.cn/docs)
+[详细文档](https://github.com/her-cat/baidu-map-docs)
 
 ## Features
 
