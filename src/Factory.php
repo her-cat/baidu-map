@@ -18,7 +18,7 @@ use HerCat\BaiduMap\Kernel\Exceptions\RuntimeException;
  *
  * @author her-cat <i@her-cat.com>
  *
- * @method static WebApi\Application    webApi(array $config)
+ * @method static WebApi\Application webApi(array $config)
  */
 class Factory
 {
